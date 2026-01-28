@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Gestão de Flats</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/mobile.css">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Gestão de Flats">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">🏠 Gestão de Flats</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-module="dashboard">
+                    <span class="nav-item-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-module="clientes">
+                    <span class="nav-item-icon">👥</span>
+                    <span>Clientes</span>
+                </a>
+                <a href="#" class="nav-item" data-module="agentes">
+                    <span class="nav-item-icon">💼</span>
+                    <span>Agentes</span>
+                </a>
+                <a href="#" class="nav-item" data-module="apartamentos">
+                    <span class="nav-item-icon">🏢</span>
+                    <span>Apartamentos</span>
+                </a>
+                <a href="#" class="nav-item" data-module="reservas">
+                    <span class="nav-item-icon">📅</span>
+                    <span>Reservas</span>
+                </a>
+                <a href="#" class="nav-item" data-module="pagamentos">
+                    <span class="nav-item-icon">💰</span>
+                    <span>Pagamentos</span>
+                </a>
+                <a href="#" class="nav-item" data-module="configuracoes">
+                    <span class="nav-item-icon">⚙️</span>
+                    <span>Configurações</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn btn-danger" id="logout-btn" style="width: 100%;">
+                    🚪 Sair
+                </button>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        ☰
+                    </button>
+                    <h2 class="header-title">Dashboard</h2>
+                </div>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" title="Alternar tema">
+                        🌙
+                    </button>
+
+                    <div class="user-menu" data-module="configuracoes" style="cursor: pointer;"
+                        title="Ir para Configurações">
+                        <div class="user-avatar header-user-avatar">A</div>
+                        <span class="user-name header-user-name"
+                            style="font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Content will be loaded here dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Module Loader - MUST be first -->
+    <script src="js/module-loader.js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/mediaStorage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/sampleData.js"></script>
+
+    <!-- Module Scripts - Load BEFORE app.js -->
+    <script src="js/modules/dashboard.js"></script>
+    <script src="js/modules/clientes.js"></script>
+    <script src="js/modules/agentes.js"></script>
+    <script src="js/modules/apartamentos.js"></script>
+    <script src="js/modules/reservas.js"></script>
+    <script src="js/modules/pagamentos.js"></script>
+    <script src="js/modules/configuracoes.js"></script>
+
+    <!-- App initialization - Load LAST -->
+    <script src="js/app.js"></script>
+    <script src="js/pwa-register.js"></script>
+</body>
+
+</html>

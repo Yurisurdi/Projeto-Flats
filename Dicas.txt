@@ -1,0 +1,15 @@
+Chat, quero criar uma aplicacao para o meu emprego freelance que tenho, vou explicar como ele funciona e quero uma solucao para poder administar melhor, tanto gasto como as informacoes:
+
+Resumindo, eu alugo flats em UK para pessoas indepentens, é alugado semanalmente(normalmente de segunda a segunda mas pode variar as vezes), essas pessoas entram em contato direto comigo informando a cidade que deseja o flat e quantos quartos(1,2 ou 3) e tambem a data, Apos isso devo ir procurar o flat pra ela, tenho contatos de pessoas onde pergunto se ela tem tal apartamento em tal lugar para alugar(agentes), esses agentes me passam video/foto do flat, com a localidade, e valor, assim repasso a cliente adicionando minha comissao, o cliente deve pagar uma reserva (na qual minha comissao ja esta inclusa, e deve ser por transferencia) e no dia do check-in ela paga o restante do quarto alugado  (em dinheiro ou transferencia, em dinheiro alguem vai ir buscar).
+
+Ou seja, quero algo no qual eu consiga administrar tudo de uma melhor forma, pois sao bastante pessoas alugando, preciso de algo no qual eu sei que X pessoa alugou o apartamento X que é da agente X com o valor do flat/quarto, podendo adicionar se ela pagou ja a reserva, o dia que vai entrar, hora, tudo essas informacoes
+
+
+Coisas a adicionar: 
+1- Melhorar o visual do site
+2- Ter opcao de colocar a sexualidade do cliente (tanto na sessao clientes como reserva)
+3- Na sessao "reserva" adicionar o valor que ;e pra reservar, e o valor restante que precisa ser pago no dia de check-in; a opcao "valor reserva e valor restante do checkin" deve ter uma caixa para dizer se foi pago ou nao
+4- Criar uma nova sessao chamada "Apartamentos" onde nela precisa ter tipo o trello que separa por cartoes, onde nesse cartao vou poder por o nome do land lord, e abaixo os apartamentos que ele tem disponivel, podendo adicionar descricao(para tudo sobre o ap), o valor dele, e principalmente e mais importante adicionar video e foto do apartamento(sem limite de gb para upload, essa aplicacao vai ser para uso interno)
+5- Na sessao "Clientes" alem da sexualidade, precisa ter uma opcao onde eu possa marcar se é um cliente ESTRELA(de confianca) ou um que nao deve ser alugado pois é problema
+6- Na sessao "Agentes" precisa ter as cidades que esse agente normalmente tem apartamentos disponiveis
+7- Arrume a sessao "configuracoes" para ter funcionalidades como deixar escuro ou claro o tema. 
