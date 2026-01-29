@@ -23,9 +23,11 @@
 /* Mobile devices */
 @media (max-width: 768px) {
 
-    /* Dashboard Layout */
+    /* Dashboard Layout - allow sidebar to escape */
     .dashboard-layout {
-        grid-template-columns: 1fr;
+        display: block;
+        position: relative;
+        overflow: visible;
     }
 
     /* Sidebar - Hidden by default on mobile */
