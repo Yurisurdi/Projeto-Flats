@@ -137,6 +137,8 @@ class App {
                         console.log('Menu item clicked');
                         sidebar.classList.remove('active');
                         sidebarOverlay.classList.remove('active');
+                        sidebar.style.left = '-280px';
+                        sidebarOverlay.style.display = 'none';
                     };
                     item.addEventListener('click', closeMenu);
                     item.addEventListener('touchend', closeMenu);
