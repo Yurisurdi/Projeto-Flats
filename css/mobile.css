@@ -29,37 +29,39 @@
         width: 100%;
     }
 
-    /* Sidebar - MUST be fixed and outside layout */
+    /* Mobile Sidebar - Transform based for reliability */
     .sidebar {
         position: fixed !important;
-        left: -280px !important;
+        left: 0 !important;
         top: 0 !important;
         bottom: 0 !important;
         width: 280px !important;
-        z-index: 1050 !important;
-        transition: left 0.3s ease !important;
+        z-index: 2000 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3) !important;
         overflow-y: auto !important;
+        will-change: transform !important;
     }
 
-    .sidebar.active {
-        left: 0 !important;
+    .sidebar.mobile-active {
+        transform: translateX(0) !important;
     }
 
     /* Mobile overlay when sidebar is open */
     .sidebar-overlay {
-        display: none;
+        display: none !important;
         position: fixed !important;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1049 !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 1999 !important;
     }
 
-    .sidebar-overlay.active {
-        display: block;
+    .sidebar-overlay.mobile-active {
+        display: block !important;
     }
 
     /* Header adjustments */

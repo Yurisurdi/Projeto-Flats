@@ -18,13 +18,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gestão de Flats">
     <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <!-- Mobile Menu Script -->
+    <script src="js/mobile-menu.js" defer></script>
 </head>
 
 <body>
     <div class="dashboard-layout">
-        <!-- Sidebar with INLINE STYLES for mobile -->
-        <aside class="sidebar"
-            style="position: fixed; left: -280px; top: 0; bottom: 0; width: 280px; z-index: 1050; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.3);">
+        <!-- Sidebar -->
+        <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">🏠 Gestão de Flats</div>
             </div>
@@ -67,10 +69,8 @@
             </div>
         </aside>
 
-        <!-- Mobile Overlay with INLINE STYLES -->
-        <div class="sidebar-overlay"
-            style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1049;">
-        </div>
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay"></div>
 
         <!-- Main Content -->
         <main class="main-content">
