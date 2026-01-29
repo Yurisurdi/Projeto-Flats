@@ -106,24 +106,35 @@ class App {
             console.log('Mobile menu setup:', { mobileMenuBtn, sidebar, sidebarOverlay });
 
             if (mobileMenuBtn && sidebar && sidebarOverlay) {
-                // Toggle sidebar - support both click and touch
+                // Toggle sidebar - support both click and touch + FORCE inline styles
                 const toggleSidebar = (e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     console.log('Toggle sidebar clicked');
                     sidebar.classList.toggle('active');
                     sidebarOverlay.classList.toggle('active');
+
+                    // FORCE inline styles to guarantee positioning
+                    if (sidebar.classList.contains('active')) {
+                        sidebar.style.left = '0px';
+                        sidebarOverlay.style.display = 'block';
+                    } else {
+                        sidebar.style.left = '-280px';
+                        sidebarOverlay.style.display = 'none';
+                    }
                 };
 
                 mobileMenuBtn.addEventListener('click', toggleSidebar);
                 mobileMenuBtn.addEventListener('touchend', toggleSidebar);
 
-                // Close sidebar when clicking overlay
+                // Close sidebar when clicking overlay + FORCE inline styles
                 const closeOverlay = (e) => {
                     e.preventDefault();
                     console.log('Overlay clicked');
                     sidebar.classList.remove('active');
                     sidebarOverlay.classList.remove('active');
+                    sidebar.style.left = '-280px';
+                    sidebarOverlay.style.display = 'none';
                 };
 
                 sidebarOverlay.addEventListener('click', closeOverlay);
