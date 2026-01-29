@@ -93,55 +93,65 @@ class App {
 
 
         // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const sidebar = document.querySelector('.sidebar');
-        const sidebarOverlay = document.querySelector('.sidebar-overlay');
+        this.setupMobileMenu();
+    }
 
-        console.log('Mobile menu setup:', { mobileMenuBtn, sidebar, sidebarOverlay });
+    setupMobileMenu() {
+        // Wait a bit to ensure DOM is fully loaded
+        setTimeout(() => {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarOverlay = document.querySelector('.sidebar-overlay');
 
-        if (mobileMenuBtn && sidebar && sidebarOverlay) {
-            // Toggle sidebar - support both click and touch
-            const toggleSidebar = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Toggle sidebar clicked');
-                sidebar.classList.toggle('active');
-                sidebarOverlay.classList.toggle('active');
-            };
+            console.log('Mobile menu setup:', { mobileMenuBtn, sidebar, sidebarOverlay });
 
-            mobileMenuBtn.addEventListener('click', toggleSidebar);
-            mobileMenuBtn.addEventListener('touchend', toggleSidebar);
+            if (mobileMenuBtn && sidebar && sidebarOverlay) {
+                // Toggle sidebar - support both click and touch
+                const toggleSidebar = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Toggle sidebar clicked');
+                    sidebar.classList.toggle('active');
+                    sidebarOverlay.classList.toggle('active');
+                };
 
-            // Close sidebar when clicking overlay
-            const closeOverlay = (e) => {
-                e.preventDefault();
-                console.log('Overlay clicked');
-                sidebar.classList.remove('active');
-                sidebarOverlay.classList.remove('active');
-            };
+                mobileMenuBtn.addEventListener('click', toggleSidebar);
+                mobileMenuBtn.addEventListener('touchend', toggleSidebar);
 
-            sidebarOverlay.addEventListener('click', closeOverlay);
-            sidebarOverlay.addEventListener('touchend', closeOverlay);
-
-            // Close sidebar when clicking a menu item
-            const sidebarItems = document.querySelectorAll('.sidebar-item');
-            console.log('Found sidebar items:', sidebarItems.length);
-            sidebarItems.forEach(item => {
-                const closeMenu = () => {
-                    console.log('Menu item clicked');
+                // Close sidebar when clicking overlay
+                const closeOverlay = (e) => {
+                    e.preventDefault();
+                    console.log('Overlay clicked');
                     sidebar.classList.remove('active');
                     sidebarOverlay.classList.remove('active');
                 };
-                item.addEventListener('click', closeMenu);
-                item.addEventListener('touchend', closeMenu);
-            });
-        } else {
-            console.error('Mobile menu elements not found!', {
-                hasBtn: !!mobileMenuBtn,
-                hasSidebar: !!sidebar,
-                hasOverlay: !!sidebarOverlay
-            });
-        }
+
+                sidebarOverlay.addEventListener('click', closeOverlay);
+                sidebarOverlay.addEventListener('touchend', closeOverlay);
+
+                // Close sidebar when clicking a menu item
+                const sidebarItems = document.querySelectorAll('.sidebar-item');
+                console.log('Found sidebar items:', sidebarItems.length);
+                sidebarItems.forEach(item => {
+                    const closeMenu = () => {
+                        console.log('Menu item clicked');
+                        sidebar.classList.remove('active');
+                        sidebarOverlay.classList.remove('active');
+                    };
+                    item.addEventListener('click', closeMenu);
+                    item.addEventListener('touchend', closeMenu);
+                });
+            } else {
+                console.error('Mobile menu elements not found!', {
+                    hasBtn: !!mobileMenuBtn,
+                    hasSidebar: !!sidebar,
+                    hasOverlay: !!sidebarOverlay
+                });
+
+                // Retry after another delay
+                setTimeout(() => this.setupMobileMenu(), 500);
+            }
+        }, 100);
     }
 
     toggleTheme() {
