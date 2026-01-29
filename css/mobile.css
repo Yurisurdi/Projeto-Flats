@@ -23,39 +23,39 @@
 /* Mobile devices */
 @media (max-width: 768px) {
 
-    /* Dashboard Layout - allow sidebar to escape */
+    /* Dashboard Layout */
     .dashboard-layout {
         display: block;
-        position: relative;
-        overflow: visible;
+        width: 100%;
     }
 
-    /* Sidebar - Hidden by default on mobile */
+    /* Sidebar - MUST be fixed and outside layout */
     .sidebar {
-        position: fixed;
-        left: -280px;
-        top: 0;
-        bottom: 0;
-        width: 280px;
-        z-index: 1050;
-        transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        position: fixed !important;
+        left: -280px !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        width: 280px !important;
+        z-index: 1050 !important;
+        transition: left 0.3s ease !important;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3) !important;
+        overflow-y: auto !important;
     }
 
     .sidebar.active {
-        left: 0;
+        left: 0 !important;
     }
 
     /* Mobile overlay when sidebar is open */
     .sidebar-overlay {
         display: none;
-        position: fixed;
+        position: fixed !important;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 1049;
+        z-index: 1049 !important;
     }
 
     .sidebar-overlay.active {
