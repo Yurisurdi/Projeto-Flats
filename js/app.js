@@ -130,7 +130,7 @@ class App {
                 sidebarOverlay.addEventListener('touchend', closeOverlay);
 
                 // Close sidebar when clicking a menu item
-                const sidebarItems = document.querySelectorAll('.sidebar-item');
+                const sidebarItems = document.querySelectorAll('.nav-item');
                 console.log('Found sidebar items:', sidebarItems.length);
                 sidebarItems.forEach(item => {
                     const closeMenu = () => {
