@@ -393,6 +393,21 @@ class UIComponents {
     }
 
     static formatDate(dateString) {
+        if (!dateString) return 'N/A';
+        
+        // If it's already a Date object, use it directly
+        if (dateString instanceof Date) {
+            return dateString.toLocaleDateString('pt-BR');
+        }
+        
+        // For YYYY-MM-DD format strings, parse as local date to avoid UTC timezone issues
+        if (typeof dateString === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+            const [year, month, day] = dateString.split('-').map(Number);
+            const localDate = new Date(year, month - 1, day);
+            return localDate.toLocaleDateString('pt-BR');
+        }
+        
+        // Fallback for other formats (timestamps, etc.)
         return new Date(dateString).toLocaleDateString('pt-BR');
     }
 
